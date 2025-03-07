@@ -11,6 +11,6 @@ int main()
     for (int i =0; i < 5; i++) {
         avr+=arr[i];
     }
-    printf ("avr = %.3f", avr/5.);
+    printf ("%.3f", avr/5.);
     return 0;
 }
