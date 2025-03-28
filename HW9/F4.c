@@ -2,22 +2,29 @@
 Цифры в строке
 Написать функцию и программу, демонстрирующую работу данной функции.
 Вывести в порядке возрастания цифры, входящие в строку. Цифра - количество.
- */
-//#include <stdio.h>
+*/
+/*#include <stdio.h>
 
-void print_digit(char s[])
+void InputGet(char s[])
 {
-    int i, r[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    char c;
-    while((c=getchar())!='\n')
+int i=0;
+char c;
+while((c=getchar())!='\n')
     {
-        if((c>='0')&&(c<='9'))
         s[i++] = c;
     }
     s[i]='\0';
-    for (i=0;s[i]!=0;i++)
-        r[s[i]-'0']++;
-    for (i=0; i<10; i++)
+}
+*/
+void print_digit(char s[])
+{
+    int i=0, r[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    for (int i=0;s[i]!=0;i++)
+        {
+            if((s[i]>='0')&&(s[i]<='9'))
+            r[s[i]-'0']++;
+        }
+    for (int i=0; i<10; i++)
         if (r[i] > 0)
             printf("%d %d\n", i, r[i]);
 }
@@ -25,6 +32,7 @@ void print_digit(char s[])
 {
     enum {BUFFER_SIZE = 20};
     char s[BUFFER_SIZE];
+    InputGet(s);
     print_digit(s);
     return 0;
 }
