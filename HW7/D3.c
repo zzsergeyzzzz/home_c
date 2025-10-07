@@ -3,16 +3,22 @@
 
 void rec(int n)
 {
-    if (n > 0) {
+    if (n == 0) {
+        return;
+    }
         printf("%d ", n%10);
         rec(n/10);
-    }
 }
 int main()
 {
-int n;
+int n=0;
     scanf("%d", &n);
+    if (n == 0) {
+        printf("0");
+    }
+    else {
     rec(n);
+    }
     return 0;
 }
 
